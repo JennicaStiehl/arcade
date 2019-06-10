@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "jennicastiehl",
+    "password": null,
+    "database": "arcade_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "jennicastiehl",
+    "password": null,
+    "database": "arcade_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "jennicastiehl",
+    "password": null,
+    "database": "arcade_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
