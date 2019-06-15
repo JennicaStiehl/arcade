@@ -31,19 +31,21 @@ router.post("/", function(req, res, next) {
     });
 });
 /*update new game*/
-router.put("/", function(req, res, next) {
-  Game.update({
-          title: req.body.title,
-          price: req.body.price,
-          releaseYear: req.body.releaseYear,
-          active: req.body.active
-    },
-      returning: true,
-      where: {
-        id: parseInt(req.params.id)
-      }
-    }
-  )
+router.put("/.id", function (req, res, next) {
+  Game.update(
+    {
+      title: req.body.title,
+      price: req.body.price,
+      releaseYear: req.body.releaseYear,
+      active: req.body.active
+    },
+    {
+      returning: true,
+      where: {
+        id: parseInt(req.params.id)
+      }
+    }
+)
     .then(([rowsUpdate, [updatedGame]]) => {
       res.setHeader("Content-Type", "application/json");
       res.status(202).send(JSON.stringify(updatedGame));
